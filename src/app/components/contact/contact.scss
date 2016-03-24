@@ -1,0 +1,38 @@
+/*contact section*/
+#section_contact{
+    margin-left: 100px;
+    margin-right: 100px;
+    height: 550px;
+  p{line-height: 160%;}
+  @media(min-width: 1024px){
+    .wrapper-left{
+        margin: 0 auto;
+        display: inline-block;
+        width: 43%;
+        height: auto;
+        padding: 30px 20px;
+        background: white;
+        overflow-x: auto;
+        i{
+            float: left; padding-right: 10px;
+            &:first-child{padding-top: 10px;}
+        }
+        .lead{margin-top: 40px;}
+    }
+    .wrapper-right{
+        margin: 0 auto;
+        display: inline-block;
+        width: 53%;
+        height: auto;
+        padding: 10px 10px;
+        background: white;
+        /*h4{text-align: center;}*/
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }    
+  }
+  .caption{text-align: center; margin-top: 0;}
+  #subscribeButton{margin-top: 15px; padding: 5px 15px;}
+}

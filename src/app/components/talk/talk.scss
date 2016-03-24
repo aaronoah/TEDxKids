@@ -1,0 +1,9 @@
+#talks{
+  .talk_classifier{
+    margin: 0 80px;
+    .breadcrumb{
+      a:hover{ text-decoration: none; color: red;}
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+#counter{
+  position: absolute;
+  top: 250px;
+  left: 1300px - $banner_img_width;
+  margin-top: 140px;
+  //margin-bottom: 150px;
+  text-align: center;
+  font: {
+    weight: oblique;
+    size: 2em;
+  }
+}

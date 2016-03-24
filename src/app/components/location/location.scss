@@ -1,0 +1,33 @@
+#location{
+  position: absolute;
+  top: 280px;
+  left: 1300px - $banner_img_width;
+  display: flex;
+  margin: 10px auto;
+  i{
+    margin-right: 5px;
+    margin-left: 350px;
+    &:hover{
+      color: red;
+    }
+  }
+  h3{
+    margin-top: 10px;
+    margin-left: 5px;
+  }
+  .popover{
+    max-width: $popover_width;
+    height: 360px;
+    .popover-title{
+      margin: 0 0;
+      padding-right: $popover_width - 68px;
+      max-width: inherit;
+    }
+    #map-content{
+      padding: 0 0;
+      width: $popover_width - 10px;
+      height: 300px;
+      position: absolute;
+    }
+  }
+}

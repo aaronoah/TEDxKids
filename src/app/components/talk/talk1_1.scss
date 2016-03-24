@@ -1,0 +1,23 @@
+@media(min-width: 1024px){  //number of tiles smaller or equal to 3
+    .tiles{
+        position: relative;
+        .large_tile{
+            width: 60%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .medium_tile{
+            width: 40%;
+            position: absolute;
+            top: 33%;
+            left: 60%;
+        }
+        .small_tile{
+            width: 20%;
+            position: absolute;
+            top: 0;
+            left: 60%;
+        }
+    }
+}

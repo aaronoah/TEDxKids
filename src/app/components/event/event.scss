@@ -1,0 +1,63 @@
+#section_event{
+  .single_event{
+      width: 1045px;
+    background-color: #fff;
+    margin: 20px 80px;
+    img{
+      padding: 15px 15px;
+      width: 28%;
+      height: auto;
+    }
+    .introduction{
+      width: 750px;
+      height: auto;
+    }
+    .event_flex{
+      display: flex;
+      flex-direction: row;
+      .flex-i{width: 16px; flex: none;}
+    }
+    i{
+      margin: 5px auto;
+    }
+  }
+  .event_blockquote{
+    margin-bottom: 0;
+  }
+  .event_speakers{
+    height: 140px;
+    $speaker_img_length: 140px;
+    $speaker_intro_length: 290px;
+    overflow-x: auto;
+    img{
+      width: $speaker_img_length;
+      height: $speaker_img_length;
+    }
+    @for $i from 1 through 4{
+      .speaker_box-#{$i}{
+        position: relative;
+        left: ($i - 1) * ($speaker_img_length + 30px + $speaker_intro_length);
+        .speaker_img{
+          position: absolute;
+          left: 0;
+          top: 0;
+        }
+        .speaker_intro{
+          position: absolute;
+          left: $speaker_img_length;
+          top: 0;
+          width: $speaker_intro_length;
+          display: inline-block;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  } //end of event_speakers
+  .event_classifier{
+    margin: 0 80px;
+    .breadcrumb{
+      a:hover{ text-decoration: none; color: red;}
+      margin-bottom: 0;
+    }
+  }
+}

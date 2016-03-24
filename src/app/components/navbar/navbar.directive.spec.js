@@ -11,11 +11,9 @@ describe('directive navbar', function() {
   beforeEach(angular.mock.module('tedxNg'));
 
   beforeEach(inject(($compile, $rootScope) => {
-    const currentDate = new Date();
-    timeInMs = currentDate.setHours(currentDate.getHours() - 24);
 
     element = angular.element(`
-      <acme-navbar creation-date="${timeInMs}"></acme-navbar>
+      <acme-navbar></acme-navbar>
     `);
 
     $compile(element)($rootScope.$new());

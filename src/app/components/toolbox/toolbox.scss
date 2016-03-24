@@ -1,0 +1,32 @@
+$header_bg_color: white;
+
+#toolbox{
+  position: fixed;
+  left: -50px;
+  top: 180px;
+  z-index: 100;
+  border-width: 0;
+  background-color: $header_bg_color;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  border-radius: 10px;
+  button{
+    background-color: inherit;
+    padding: 10px 5px;
+    border-radius: 0;
+    border-width: 0;
+    &:hover{color: red;}
+    &:first-child{border-top-left-radius: 10px; border-top-right-radius: 10px;}
+    &:last-child,&:last-child:hover{
+      width: 50px;
+      height: 35px;
+      padding: 0 5px;
+      border-bottom-left-radius: 10px;
+      border-bottom-right-radius: 10px;
+    }
+    &[class='close'] span{color: black; &:hover{color: red;}}
+  }
+  .tooltip-inner{ //specify the font within the tooltip content
+    font: {size: 1.2em;}
+  }
+}

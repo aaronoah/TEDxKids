@@ -1,21 +1,21 @@
-<nav class="navbar navbar-static-top navbar-inverse">
-  <div class="container-fluid">
+<nav>
     <div class="navbar-header">
-      <a class="navbar-brand" href="https://github.com/Swiip/generator-gulp-angular">
-        <span class="glyphicon glyphicon-home"></span> Gulp Angular
-      </a>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/"><img src="../../assets/images/home_logo_white.png" alt="TEDxKids" /></a>
     </div>
-
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
-      <ul class="nav navbar-nav">
-        <li class="active"><a ng-href="#">Home</a></li>
-        <li><a ng-href="#">About</a></li>
-        <li><a ng-href="#">Contact</a></li>
-      </ul>
-
-      <ul class="nav navbar-nav navbar-right acme-navbar-text">
-        <li>Application was created {{ vm.relativeDate }}.</li>
-      </ul>
+    <div id="nav-collapse" class="collapse navbar-collapse">
+        <ul class="nav nav-tabs navbar-nav navbar-right" role="tablist">
+            <li><a href="#talks" du-smooth-scroll du-scrollspy>演讲视频</a></li>
+            <li><a href="#events" du-smooth-scroll du-scrollspy>活动回顾</a></li>
+            <li><a href="#join" du-smooth-scroll du-scrollspy>参与</a></li>
+            <li><a href="#whoweare" du-smooth-scroll du-scrollspy>我们是谁</a></li>
+            <li><a href="#sponsor" du-smooth-scroll du-scrollspy>合作和赞助</a></li>
+            <li><a href="#contact" du-smooth-scroll du-scrollspy>联系方式</a></li>
+        </ul>
     </div>
-  </div>
 </nav>

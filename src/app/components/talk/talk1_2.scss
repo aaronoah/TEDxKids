@@ -1,0 +1,43 @@
+@media(min-width: 1024px){
+    .tiles{
+        position: relative;
+        .large_tile{
+            width: 60%;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        @for $i from 1 through 2{
+            .medium_tile#{$i} {
+                width: 40%;
+                position: absolute;
+                @if $i == 1{
+                    top: 20%;
+                    left: 60%;
+                }@else if $i == 2{
+                    top: 60%;
+                    left: 0;
+                }
+            }
+        }
+        @for $i from 1 through 4{
+            .small_tile#{$i} {
+                width: 20%;
+                position: absolute;
+                @if $i == 1{
+                    top: 0;
+                    left: 60%;
+                }@else if $i == 2{
+                    top: 60%;
+                    left: 40%;
+                }@else if $i == 3{
+                    top: 60%;
+                    left: 60%;
+                }@else if $i == 4{
+                    top: 60%;
+                    left: 80%;
+                }
+            }
+        }
+    }
+}

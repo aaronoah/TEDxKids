@@ -13,7 +13,7 @@ export function BannerDirective() {
 }
 
 class BannerController {
-  constructor () {
+  constructor ($scope, $interval) {
     'ngInject';
     var $jq = angular.element;
     var count = $jq('.slider .list').length;
@@ -64,7 +64,7 @@ class BannerController {
             slides_title_array = title_array;
     };
     var turnOnAutoplay = function (millisecs) {
-            $interval(this.moveRight, millisecs); //periodically play the slides
+            $interval(moveRight, millisecs); //periodically play the slides
     };
     
     setSlidesTitleArray(['无限&middot;未来','永恒的瞬间']);

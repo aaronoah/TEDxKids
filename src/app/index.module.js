@@ -1,4 +1,3 @@
-/* global */
 
 import { config } from './index.config';
 import { routerConfig } from './index.route';

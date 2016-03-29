@@ -28,15 +28,17 @@ $header_height: 90px;
 
 html,body{
   //typography settings
-  p::selection {
-    background:#f00; 
-    color:#fff;
-  }
-  ::-moz-selection {
-    background:#f00; 
-    color:#fff;
-  }
-  ::-webkit-selection {
+  p::selection,
+  span::selection,
+  h1::selection,
+  h2::selection,
+  h3::selection,
+  h4::selection,
+  h5::selection,
+  h6::selection,
+  i::selection,
+  a::selection,
+  blockquote::selection {
     background:#f00; 
     color:#fff;
   }

@@ -13,28 +13,39 @@ export function BannerDirective() {
 }
 
 class BannerController {
-  constructor ($scope, $interval) {
+  constructor ($scope, $document, $window, $interval) {
     'ngInject';
-    var $jq = angular.element;
-    var count = $jq('.slider .list').length;
-	var slideWidth = $jq('.slider').width();
+    //var $jq = angular.element;
+    //var count = $jq('.slider .list').length;
+	//var slideWidth = $jq('.slider').width();
+    //var sliderUlWidth = count * slideWidth;
+    //var slides_title_array = [];
+    //var index = 0;  //records the current index number of slide
+    var count = $document.querySelectorAll('.slider .list').length;
+    var slideWidth = $document.querySelectorAll('.slider').style.width;
     var sliderUlWidth = count * slideWidth;
     var slides_title_array = [];
-    var index = 0;  //records the current index number of slide
-    
+    var index = 0;
     var init = function () {
-            $jq('.slider').css({ width: sliderUlWidth});
-            $jq('.slider .list:first-child').addClass('active'); //imperatively make the first node active
-            $jq.each($jq('.slider .list'), function(){   //makes black space empty
-                var paddingRight = slideWidth - $jq(this).width();
-                $jq(this).css({paddingRight: paddingRight});
-            });
-            
+            //$jq('.slider').css({ width: sliderUlWidth});
+            //$jq('.slider .list:first-child').addClass('active'); //imperatively make the first node active
+            //$jq.each($jq('.slider .list'), function(){   //makes black space empty
+                //var paddingRight = slideWidth - $jq(this).width();
+                //$jq(this).css({paddingRight: paddingRight});
+            //});
+            $document.querySelectorAll('.slider').style.width = sliderUlWidth;
+            $window.addClass($document.querySelectorAll('.slider .list:first-child'), 'active');
+            var list = $document.querySelectorAll('.slider .list');
+            var sliderWidth = $document.querySelectorAll('.slider .list').length;
+            for(var i=0;i<sliderWidth;i++){
+                var paddingRight = slideWidth - list[i].style.width;
+                list[i].style.paddingRight = paddingRight;
+            }
     };
     init();
     
-    var moveLeft = function () {
-            $jq('.slider').animate({left: + slideWidth
+    $scope.scrollLeft = function(){
+        $jq('.slider').animate({left: + slideWidth
                 }, 800, function () {
                     index = index < 0 ? slides_title_array.length - 1 : index-1;
                     $jq('.slider .list:last-child').prependTo('.slider');
@@ -42,22 +53,15 @@ class BannerController {
                     $jq('.banner_message_box .title').html(slides_title_array[index]);
                 });
     };
-    var moveRight = function () {  
-            $jq('.slider').animate({left: - slideWidth
+    
+    $scope.scrollRight = function(){
+        $jq('.slider').animate({left: - slideWidth
                 }, 800, function () {
                     index = (index+1) % slides_title_array.length;
                     $jq('.slider .list:first-child').appendTo('.slider');
                     $jq('.slider').css('left', 0);
                     $jq('.banner_message_box .title').html(slides_title_array[index]);
                 });
-    };
-    
-    $scope.scrollLeft = function(){
-        moveLeft();
-    };
-    
-    $scope.scrollRight = function(){
-        moveRight();
     };
     
     var setSlidesTitleArray = function (title_array) {
